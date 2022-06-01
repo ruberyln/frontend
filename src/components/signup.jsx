@@ -110,7 +110,17 @@ export default function SignUp() {
                   autoComplete="new-password"
                 />
               </Grid>
-              
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  name="password"
+                  label="Confirm Password"
+                  type="password"
+                  id="password"
+                  autoComplete="new-password"
+                />
+              </Grid>
              
             </Grid>
             <Button
@@ -119,12 +129,14 @@ export default function SignUp() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
               color ="secondary"
+              component ={Link}
+              href = {"/signin "}
             >
               CREATE ACCOUNT
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link to="#" variant="body2">
+                <Link href='http://localhost:3000/signin ' variant="body2">
                   Already have an account? Sign in
                 </Link>
               </Grid>

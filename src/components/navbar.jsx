@@ -6,6 +6,8 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/material/Menu';
+import { Link } from '@mui/material';
+
 //import { Link } from "react-router-dom";
 //import SignUp from './signup';
 
@@ -14,12 +16,13 @@ export default function ButtonAppBar()
     return(
 
         <Box sx ={{ flexGrow: 1}}>
-            <AppBar position ="static">
-             <Toolbar>
+            <AppBar position ="sticky"style ={{backgroundColor :"black"}}>
+             <Toolbar 
+            
+             >
                  <IconButton
                  size= "large"
                  edge="start"
-                color = "success"
                  aria-label= "menu"
                  sx={{ mr:2}}
                  >
@@ -31,14 +34,19 @@ export default function ButtonAppBar()
                  <Typography variant ="h6" component = "div"  sx={{flexGrow: 1 }}>
                      CUBE
                  </Typography>
-                 <Button color ="inherit"> Login</Button>
-                 <Button color ="inherit"> Create Account</Button>
+                 <Button color ="inherit"
+                 component ={Link}
+                 href = {"/signin"}> Log In</Button>
+                 <Button color ="inherit"
+                 component ={Link}
+               href= {"/signup"}> Create Account</Button>
         
      
                  </Toolbar>   
                  
             </AppBar>
         </Box>
+        
         
     );
 }
