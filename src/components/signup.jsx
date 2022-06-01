@@ -130,7 +130,7 @@ export default function SignUp() {
               sx={{ mt: 3, mb: 2 }}
               color ="secondary"
               component ={Link}
-              href = {"/signin "}
+              href = {"/success "}
             >
               CREATE ACCOUNT
             </Button>
