@@ -17,9 +17,9 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Link from '@mui/material/Link';
-import HomeIcon from '@mui/icons-material/Home';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
-import CameraAltOutlinedIcon from '@mui/icons-material/CameraAltOutlined';
+import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import PowerSettingsNewOutlinedIcon from '@mui/icons-material/PowerSettingsNewOutlined';
 
@@ -149,7 +149,7 @@ export default function MiniDrawer() {
                     justifyContent: 'center',
                   }}
                 >
-                  {index % 2 === 0 ? <HomeIcon /> : <NotificationsOutlinedIcon /> }
+                  {index % 2 === 0 ? <HomeOutlinedIcon /> : <NotificationsOutlinedIcon /> }
                   
                 </ListItemIcon>
                 <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
@@ -180,7 +180,7 @@ export default function MiniDrawer() {
                   //component ={Link}
                  // href = {"/drawer "}
                 >
-                 {index % 2 === 0 ? <CameraAltOutlinedIcon /> :<PersonOutlinedIcon /> }
+                 {index % 2 === 0 ? <CameraAltIcon /> :<PersonOutlinedIcon /> }
                  
                 </ListItemIcon>
                 <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />

@@ -17,7 +17,7 @@ export default function Success() {
       <CssBaseline />
       <Box
           sx={{
-              border:1,
+           
             marginTop: 8,
             backgroundColor :"",
             display: 'flex',

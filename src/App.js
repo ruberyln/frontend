@@ -8,6 +8,8 @@ import Drawer from './components/drawer';
 import { Route, Routes, } from "react-router-dom";
 import SignOut from './components/signout';
 import Success from './components/success';
+import Upload from './components/upload';
+//import { Container } from '@mui/system';
 //import Typography from '@mui/material/Typography';
 <meta name="viewport" content="initial-scale=1, width=device-width" />
 
@@ -16,8 +18,9 @@ function App () {
     <div>
            
            <Navbar/>
-      
+       
             <Routes>
+            <Route exact path= "/upload" element={<Upload />} /> 
 <Route exact path= "/signout" element={<SignOut />} />  
  <Route exact path= "/success" element={<Success />} />  
 <Route exact path= "/drawer" element={<Drawer />} />
