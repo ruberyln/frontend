@@ -141,6 +141,8 @@ export default function MiniDrawer() {
                   justifyContent: open ? 'initial' : 'center',
                   px: 2.5,
                 }}
+                component ={Link}
+                href = {"/home "}
               >
                 <ListItemIcon
                   sx={{
@@ -177,8 +179,7 @@ export default function MiniDrawer() {
                     justifyContent: 'center',
                     
                   }}
-                  //component ={Link}
-                 // href = {"/drawer "}
+              
                 >
                  {index % 2 === 0 ? <CameraAltOutlinedIcon /> :<PersonOutlinedIcon /> }
                  

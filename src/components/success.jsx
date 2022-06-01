@@ -8,12 +8,17 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
+import Card from '@mui/material/Card';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 const theme = createTheme();
 export default function Success() {
   return (
     <ThemeProvider theme={theme}>
+     
     <Container component="main" maxWidth="xs">
+    <Card sx ={{maxWidth:345, marginTop:10  }} 
+      alignItems = "center"
+      justifyContent ="center">
       <CssBaseline />
       <Box
           sx={{
@@ -48,7 +53,9 @@ export default function Success() {
               Sign In
             </Button>
         </Box>
+        </Card>
         </Container>
+       
         </ThemeProvider>
 
   );

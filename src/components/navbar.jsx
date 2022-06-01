@@ -11,42 +11,49 @@ import { Link } from '@mui/material';
 //import { Link } from "react-router-dom";
 //import SignUp from './signup';
 
+const styles = {
+    paperContainer: {
+        height: 900,
+   
+        backgroundImage: `url(${"https://images.unsplash.com/photo-1621075160523-b936ad96132a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"})`
+    }
+};
 export default function ButtonAppBar()
 {
     return(
 
-        <Box sx ={{ flexGrow: 1}}>
-            <AppBar position ="sticky"style ={{backgroundColor :"black"}}>
-             <Toolbar 
-            
-             >
-                 <IconButton
-                 size= "large"
-                 edge="start"
-                 aria-label= "menu"
-                 sx={{ mr:2}}
-                 >
-                     
-<MenuIcon/>
+        <><Box sx={{ flexGrow: 1 }}>
+            <AppBar position="sticky" style={{ backgroundColor: "black" }}>
+                <Toolbar
+
+                >
+                    <IconButton
+                        size="large"
+                        edge="start"
+                        aria-label="menu"
+                        sx={{ mr: 2 }}
+                    >
+
+                        <MenuIcon />
 
 
-                 </IconButton>
-                 <Typography variant ="h6" component = "div"  sx={{flexGrow: 1 }}>
-                     CUBE
-                 </Typography>
-                 <Button color ="inherit"
-                 component ={Link}
-                 href = 'http://localhost:3000/signin'> Log In</Button>
-                 <Button color ="inherit"
-                 component ={Link}
-               href= {"/signup"}> Create Account</Button>
-        
-     
-                 </Toolbar>   
-                 
+                    </IconButton>
+                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                        CUBE
+                    </Typography>
+                    <Button color="inherit"
+                        component={Link}
+                        href='http://localhost:3000/signin'> Log In</Button>
+                    <Button color="inherit"
+                        component={Link}
+                        href={"/signup"}> Create Account</Button>
+
+
+                </Toolbar>
+
             </AppBar>
-        </Box>
-        
-        
+        </Box><div
+            style={styles.paperContainer}>
+            </div></>
     );
 }

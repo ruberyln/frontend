@@ -7,37 +7,40 @@ import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
+import Collapse from '@mui/material/Collapse';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Link from '@mui/material/Link';
-import Card from '@mui/material/Card';
-import Button from '@mui/material/Button';
-
-//import FileUploadIcon from '@mui/icons-material/FileUpload';
-//import CameraAltIcon from '@mui/icons-material/CameraAlt';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-//import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
-//import HomeIcon from '@mui/icons-material/Home';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import HomeIcon from '@mui/icons-material/Home';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
-//import CameraAltOutlinedIcon from '@mui/icons-material/CameraAltOutlined';
+import CameraAltOutlinedIcon from '@mui/icons-material/CameraAltOutlined';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import PowerSettingsNewOutlinedIcon from '@mui/icons-material/PowerSettingsNewOutlined';
-import CameraAltIcon from '@mui/icons-material/CameraAlt';
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import Container from '@mui/material/Container'
+//import Avatar from '@mui/material/Avatar'
+//import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import ThumbDownOutlinedIcon from '@mui/icons-material/ThumbDownOutlined';
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import Card from '@mui/material/Card';
+import Avatar from '@mui/material/Avatar';
+import { red } from '@mui/material/colors';
+
+//import CardContent from '@mui/material/CardContent';
+import { CardHeader, CardActions, CardContent } from '@mui/material';
+import CardMedia from '@mui/material/CardMedia';
+//import Stack from '@mui/material/Stack';
+
 const drawerWidth = 240;
 
-const Input = styled('input')({
-    display: 'none',
-  });
 const openedMixin = (theme) => ({
   width: drawerWidth,
   transition: theme.transitions.create('width', {
@@ -46,6 +49,24 @@ const openedMixin = (theme) => ({
   }),
   overflowX: 'hidden',
 });
+
+const ExpandMore = styled((props) => {
+  const { expand, ...other } = props;
+  return <IconButton {...other} />;
+})(({ theme, expand }) => ({
+  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+  marginLeft: 'auto',
+  transition: theme.transitions.create('transform', {
+    duration: theme.transitions.duration.shortest,
+  }),
+}));
+export default function MiniDrawer() {
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
+
 
 const closedMixin = (theme) => ({
   transition: theme.transitions.create('width', {
@@ -103,7 +124,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function MiniDrawer() {
+
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -145,36 +166,7 @@ export default function MiniDrawer() {
         </DrawerHeader>
         <Divider />
         <List>
-          {['Profile'].map((text, ) => (
-            <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 50,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-                component ={Link}
-                href = {"# "}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-               
-                >
-                    <HomeOutlinedIcon /> 
-
-              
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-        <List>
-          {['Profile'].map((text, ) => (
+          {['Home', 'Notifications'].map((text, index) => (
             <ListItem key={text} disablePadding sx={{ display: 'block' }}>
               <ListItemButton
                 sx={{
@@ -182,8 +174,6 @@ export default function MiniDrawer() {
                   justifyContent: open ? 'initial' : 'center',
                   px: 2.5,
                 }}
-                component ={Link}
-                href = {"# "}
               >
                 <ListItemIcon
                   sx={{
@@ -191,21 +181,18 @@ export default function MiniDrawer() {
                     mr: open ? 3 : 'auto',
                     justifyContent: 'center',
                   }}
-               
                 >
-                    <NotificationsOutlinedIcon /> 
-              
+                  {index % 2 === 0 ? <HomeIcon /> : <NotificationsOutlinedIcon /> }
+                  
                 </ListItemIcon>
                 <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
           ))}
         </List>
-
-
  
         <List>
-          {['Profile'].map((text, ) => (
+          {['Upload', 'Profile'].map((text, index) => (
             <ListItem key={text} disablePadding sx={{ display: 'block' }}>
               <ListItemButton
                 sx={{
@@ -213,48 +200,21 @@ export default function MiniDrawer() {
                   justifyContent: open ? 'initial' : 'center',
                   px: 2.5,
                 }}
-                component ={Link}
-                href = {"# "}
+                 component ={Link}
+                 href = {"/upload "}
               >
                 <ListItemIcon
                   sx={{
                     minWidth: 0,
                     mr: open ? 3 : 'auto',
                     justifyContent: 'center',
+                    
                   }}
-               
+                  //component ={Link}
+                 // href = {"/drawer "}
                 >
-                    <CameraAltIcon /> 
-              
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-
-        <List>
-          {['Profile'].map((text, ) => (
-            <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 80,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-                component ={Link}
-                href = {"# "}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-               
-                >
-                    <PersonOutlinedIcon /> 
-              
+                 {index % 2 === 0 ? <CameraAltOutlinedIcon /> :<PersonOutlinedIcon /> }
+                 
                 </ListItemIcon>
                 <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
@@ -293,72 +253,83 @@ export default function MiniDrawer() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
-        <ThemeProvider theme={theme}>
-     
-    <Container component="main" maxWidth="xs">
-    <Card sx ={{maxWidth:400, marginTop:10  }} 
-      alignItems = "center"
-      justifyContent ="center">
-      <CssBaseline />
-      <Box
-          sx={{
-           
-            marginTop: 8,
-            backgroundColor :"",
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          
-          }}
-        >
-       <Avatar sx={{ m: 3, bgcolor: 'secondary.main' }}>
-            < CameraAltIcon />
+        <Container component ="main" > 
+        <Card sx={{ maxWidth: 900 }}
+       alignItems = "center"
+       justifyContent ="center" >
+      <CardHeader
+        avatar={
+          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+            R
           </Avatar>
-          <Box 
-          sx={{
-              border :4,
-              margin:2,
-        width: 300,
-        height: 200,
-        }}>
+        }
+        action={
+          <IconButton aria-label="settings">
+            <MoreVertIcon />
+          </IconButton>
+        }
+        title="@user"
+        subheader="September 14, 2016"
+      />
+      <CardMedia
+        component="img"
+        height="500"
+        image="https://images.unsplash.com/photo-1603189343302-e603f7add05a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
+        alt="Paella dish"
+      />
+      <CardContent>
+        <Typography variant="body2" color="text.secondary">
+         You know how it is. Fashion = my life.
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton aria-label="add to favorites">
+          <FavoriteBorderOutlinedIcon />
+        </IconButton>
+        <IconButton aria-label="share">
+          <ThumbDownOutlinedIcon />
+        </IconButton>
+        <ExpandMore
+          expand={expanded}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        > <Typography variant = "h6" >View Comments</Typography>
+          <ExpandMoreIcon />
+        </ExpandMore>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <CardContent>
 
-          <Box
-           sx={{
-            border :4,
-            margin:2,
-           
-      width: 300,
-      height: 200,
-      }}
-      >
-   
-      </Box>
-          </Box>
-  <Typography component="h1" variant="h3"
-  sx = {{ m: 1,  }}>
-         Upload Image
+          <Typography paragraph>Method:</Typography>
+          <Typography paragraph>
+            Heat 1/2 cup of the broth in a pot until simmering, add saffron and set
+            aside for 10 minutes.
           </Typography>
-
-          <label htmlFor="contained-button-file">
-        <Input accept="image/*" id="contained-button-file" multiple type="file" />
-          <Button
-          variant = "contained"
-              component="span"
-              type="submit"
-              Width
-              variant="contained"
-              sx={{ mt: 1, mb: 2 }}
-              color = "secondary"
-              >
-              UPLOAD
-            </Button>
-            </label>
-
-        </Box>
-        </Card>
-        </Container>
-       
-        </ThemeProvider>
+          <Typography paragraph>
+            Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over
+            medium-high heat. Add chicken, shrimp and chorizo, and cook, stirring
+            occasionally until lightly browned, 6 to 8 minutes. Transfer shrimp to a
+            large plate and set aside, leaving chicken and chorizo in the pan. Add
+            pimentón, bay leaves, garlic, tomatoes, onion, salt and pepper, and cook,
+            stirring often until thickened and fragrant, about 10 minutes. Add
+            saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
+          </Typography>
+          <Typography paragraph>
+            Add rice and stir very gently to distribute. Top with artichokes and
+            peppers, and cook without stirring, until most of the liquid is absorbed,
+            15 to 18 minutes. Reduce heat to medium-low, add reserved shrimp and
+            mussels, tucking them down into the rice, and cook again without
+            stirring, until mussels have opened and rice is just tender, 5 to 7
+            minutes more. (Discard any mussels that don&apos;t open.)
+          </Typography>
+          <Typography>
+            Set aside off of the heat to let rest for 10 minutes, and then serve.
+          </Typography>
+        </CardContent>
+      </Collapse>
+    </Card>
+    </Container>
       
       </Box>
     </Box>

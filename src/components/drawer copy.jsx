@@ -7,8 +7,6 @@ import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -19,25 +17,15 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Link from '@mui/material/Link';
-import Card from '@mui/material/Card';
-import Button from '@mui/material/Button';
-
-//import FileUploadIcon from '@mui/icons-material/FileUpload';
-//import CameraAltIcon from '@mui/icons-material/CameraAlt';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-//import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
-//import HomeIcon from '@mui/icons-material/Home';
+import HomeIcon from '@mui/icons-material/Home';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
-//import CameraAltOutlinedIcon from '@mui/icons-material/CameraAltOutlined';
+import CameraAltOutlinedIcon from '@mui/icons-material/CameraAltOutlined';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import PowerSettingsNewOutlinedIcon from '@mui/icons-material/PowerSettingsNewOutlined';
-import CameraAltIcon from '@mui/icons-material/CameraAlt';
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+
+
 const drawerWidth = 240;
 
-const Input = styled('input')({
-    display: 'none',
-  });
 const openedMixin = (theme) => ({
   width: drawerWidth,
   transition: theme.transitions.create('width', {
@@ -145,36 +133,7 @@ export default function MiniDrawer() {
         </DrawerHeader>
         <Divider />
         <List>
-          {['Profile'].map((text, ) => (
-            <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 50,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-                component ={Link}
-                href = {"# "}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-               
-                >
-                    <HomeOutlinedIcon /> 
-
-              
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-        <List>
-          {['Profile'].map((text, ) => (
+          {['Home', 'Notifications'].map((text, index) => (
             <ListItem key={text} disablePadding sx={{ display: 'block' }}>
               <ListItemButton
                 sx={{
@@ -182,8 +141,6 @@ export default function MiniDrawer() {
                   justifyContent: open ? 'initial' : 'center',
                   px: 2.5,
                 }}
-                component ={Link}
-                href = {"# "}
               >
                 <ListItemIcon
                   sx={{
@@ -191,21 +148,18 @@ export default function MiniDrawer() {
                     mr: open ? 3 : 'auto',
                     justifyContent: 'center',
                   }}
-               
                 >
-                    <NotificationsOutlinedIcon /> 
-              
+                  {index % 2 === 0 ? <HomeIcon /> : <NotificationsOutlinedIcon /> }
+                  
                 </ListItemIcon>
                 <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
           ))}
         </List>
-
-
  
         <List>
-          {['Profile'].map((text, ) => (
+          {['Upload', 'Profile'].map((text, index) => (
             <ListItem key={text} disablePadding sx={{ display: 'block' }}>
               <ListItemButton
                 sx={{
@@ -213,48 +167,21 @@ export default function MiniDrawer() {
                   justifyContent: open ? 'initial' : 'center',
                   px: 2.5,
                 }}
-                component ={Link}
-                href = {"# "}
+                 component ={Link}
+                 href = {"/upload "}
               >
                 <ListItemIcon
                   sx={{
                     minWidth: 0,
                     mr: open ? 3 : 'auto',
                     justifyContent: 'center',
+                    
                   }}
-               
+                  //component ={Link}
+                 // href = {"/drawer "}
                 >
-                    <CameraAltIcon /> 
-              
-                </ListItemIcon>
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-
-        <List>
-          {['Profile'].map((text, ) => (
-            <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                sx={{
-                  minHeight: 80,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}
-                component ={Link}
-                href = {"# "}
-              >
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
-               
-                >
-                    <PersonOutlinedIcon /> 
-              
+                 {index % 2 === 0 ? <CameraAltOutlinedIcon /> :<PersonOutlinedIcon /> }
+                 
                 </ListItemIcon>
                 <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
@@ -293,72 +220,7 @@ export default function MiniDrawer() {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
-        <ThemeProvider theme={theme}>
-     
-    <Container component="main" maxWidth="xs">
-    <Card sx ={{maxWidth:400, marginTop:10  }} 
-      alignItems = "center"
-      justifyContent ="center">
-      <CssBaseline />
-      <Box
-          sx={{
-           
-            marginTop: 8,
-            backgroundColor :"",
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          
-          }}
-        >
-       <Avatar sx={{ m: 3, bgcolor: 'secondary.main' }}>
-            < CameraAltIcon />
-          </Avatar>
-          <Box 
-          sx={{
-              border :4,
-              margin:2,
-        width: 300,
-        height: 200,
-        }}>
-
-          <Box
-           sx={{
-            border :4,
-            margin:2,
-           
-      width: 300,
-      height: 200,
-      }}
-      >
-   
-      </Box>
-          </Box>
-  <Typography component="h1" variant="h3"
-  sx = {{ m: 1,  }}>
-         Upload Image
-          </Typography>
-
-          <label htmlFor="contained-button-file">
-        <Input accept="image/*" id="contained-button-file" multiple type="file" />
-          <Button
-          variant = "contained"
-              component="span"
-              type="submit"
-              Width
-              variant="contained"
-              sx={{ mt: 1, mb: 2 }}
-              color = "secondary"
-              >
-              UPLOAD
-            </Button>
-            </label>
-
-        </Box>
-        </Card>
-        </Container>
-       
-        </ThemeProvider>
+        
       
       </Box>
     </Box>

@@ -11,12 +11,16 @@ import Link from '@mui/material/Link';
 //import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import Stack from '@mui/material/Stack';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
+import Card from '@mui/material/Card';
 const theme = createTheme();
 
 export default function SignOut() {
   return (
     <ThemeProvider theme={theme}>
     <Container component="main" maxWidth="xs">
+    <Card sx ={{maxWidth:345,  marginTop: 10,  }} 
+      alignItems = "center"
+      justifyContent ="center">
       <CssBaseline />
       <Box
           sx={{
@@ -39,12 +43,12 @@ export default function SignOut() {
 
           <Box
           sx={{
-            marginTop: 2,
+            marginTop: 1,
             backgroundColor :"",
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-          
+            marginBottom:5
           }}
         >
           <Typography component="h1" variant="h5"
@@ -55,7 +59,7 @@ export default function SignOut() {
               type="submit"
             variant="contained" color="secondary"
               component ={Link}
-              href = {"/navbar "}
+              href = {"http://localhost:3000"}
               
             >
               Yes 
@@ -66,7 +70,7 @@ export default function SignOut() {
               type="submit"
             variant="contained" color="secondary"
               component ={Link}
-              href = {"/drawer "}
+              href = {"/home "}
               
             >
               Cancel 
@@ -74,6 +78,7 @@ export default function SignOut() {
             </Stack>
             </Box>
         </Box>
+        </Card>
         </Container>
         </ThemeProvider>
 
