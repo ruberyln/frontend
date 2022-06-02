@@ -24,7 +24,7 @@ import Button from '@mui/material/Button';
 
 //import FileUploadIcon from '@mui/icons-material/FileUpload';
 //import CameraAltIcon from '@mui/icons-material/CameraAlt';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 //import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 //import HomeIcon from '@mui/icons-material/Home';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
@@ -133,7 +133,7 @@ export default function MiniDrawer() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-         HOME
+      Upload
           </Typography>
         </Toolbar>
       </AppBar>
@@ -334,7 +334,7 @@ export default function MiniDrawer() {
    
       </Box>
           </Box>
-  <Typography component="h1" variant="h3"
+  <Typography component="h1" variant="h4"
   sx = {{ m: 1,  }}>
          Upload Image
           </Typography>
@@ -346,7 +346,7 @@ export default function MiniDrawer() {
               component="span"
               type="submit"
               Width
-              variant="contained"
+              variant1="contained"
               sx={{ mt: 1, mb: 2 }}
               color = "secondary"
               >
