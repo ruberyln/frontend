@@ -10,6 +10,8 @@ import SignOut from './components/signout';
 import Success from './components/success';
 import Upload from './components/upload';
 import Home from './components/home';
+//import Post from './components/post';
+import CreatePost from './components/createpost';
 //import { Container } from '@mui/system';
 //import Typography from '@mui/material/Typography';
 <meta name="viewport" content="initial-scale=1, width=device-width" />
@@ -21,6 +23,8 @@ function App () {
          
        
             <Routes>
+            <Route exact path= "/createpost" element={<CreatePost />} /> 
+           
     <Route exact path= "/upload" element={<Upload />} /> 
     <Route exact path= "/" element={<Navbar />} /> 
  <Route exact path= "/home" element={<Home />} /> 

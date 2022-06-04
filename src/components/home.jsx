@@ -61,7 +61,7 @@ const ExpandMore = styled((props) => {
     duration: theme.transitions.duration.shortest,
   }),
 }));
-export default function MiniDrawer() {
+export default function Home() {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -136,6 +136,9 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   const handleDrawerClose = () => {
     setOpen(false);
   };
+  //const [Images, setImage] = useState([]);
+
+
 
   return (
     <Box sx={{ display: 'flex' }}>

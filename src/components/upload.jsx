@@ -343,12 +343,14 @@ export default function MiniDrawer() {
         <Input accept="image/*" id="contained-button-file" multiple type="file" />
           <Button
           variant = "contained"
-              component="span"
+              component={Link}
+              href = {"/createpost "}
               type="submit"
               Width
               variant1="contained"
               sx={{ mt: 1, mb: 2 }}
               color = "secondary"
+
               >
               UPLOAD
             </Button>
