@@ -35,6 +35,10 @@ const openedMixin = (theme) => ({
   overflowX: 'hidden',
 });
 
+
+export default function Home() {
+ 
+
 const closedMixin = (theme) => ({
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
@@ -91,7 +95,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function MiniDrawer() {
+
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -102,8 +106,12 @@ export default function MiniDrawer() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+  //const [Images, setImage] = useState([]);
+
+
 
   return (
+    
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" open={open} color ="secondary">
@@ -141,8 +149,6 @@ export default function MiniDrawer() {
                   justifyContent: open ? 'initial' : 'center',
                   px: 2.5,
                 }}
-                component ={Link}
-                href = {"/home "}
               >
                 <ListItemIcon
                   sx={{
@@ -179,7 +185,8 @@ export default function MiniDrawer() {
                     justifyContent: 'center',
                     
                   }}
-              
+                  //component ={Link}
+                 // href = {"/drawer "}
                 >
                  {index % 2 === 0 ? <CameraAltOutlinedIcon /> :<PersonOutlinedIcon /> }
                  
@@ -219,11 +226,8 @@ export default function MiniDrawer() {
           ))}
         </List>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader />
-        
-      
       </Box>
-    </Box>
+  
   );
 }
+

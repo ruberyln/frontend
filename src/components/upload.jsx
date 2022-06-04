@@ -145,7 +145,7 @@ export default function MiniDrawer() {
         </DrawerHeader>
         <Divider />
         <List>
-          {['Profile'].map((text, ) => (
+          {['Home'].map((text, ) => (
             <ListItem key={text} disablePadding sx={{ display: 'block' }}>
               <ListItemButton
                 sx={{
@@ -154,7 +154,7 @@ export default function MiniDrawer() {
                   px: 2.5,
                 }}
                 component ={Link}
-                href = {"# "}
+                href = {"./Home"}
               >
                 <ListItemIcon
                   sx={{
@@ -174,7 +174,7 @@ export default function MiniDrawer() {
           ))}
         </List>
         <List>
-          {['Profile'].map((text, ) => (
+          {['Notification'].map((text, ) => (
             <ListItem key={text} disablePadding sx={{ display: 'block' }}>
               <ListItemButton
                 sx={{
@@ -205,7 +205,7 @@ export default function MiniDrawer() {
 
  
         <List>
-          {['Profile'].map((text, ) => (
+          {['Upload'].map((text, ) => (
             <ListItem key={text} disablePadding sx={{ display: 'block' }}>
               <ListItemButton
                 sx={{
@@ -214,7 +214,7 @@ export default function MiniDrawer() {
                   px: 2.5,
                 }}
                 component ={Link}
-                href = {"# "}
+                href = {"./"}
               >
                 <ListItemIcon
                   sx={{
@@ -243,7 +243,7 @@ export default function MiniDrawer() {
                   px: 2.5,
                 }}
                 component ={Link}
-                href = {"# "}
+                href = {"#"}
               >
                 <ListItemIcon
                   sx={{
