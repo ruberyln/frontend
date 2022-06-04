@@ -114,7 +114,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open} color ="secondary">
+      <AppBar position="fixed" open={open} color ="secondary" >
         <Toolbar>
           <IconButton
             color="inherit"

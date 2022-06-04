@@ -11,7 +11,7 @@ import Success from './components/success';
 import Upload from './components/upload';
 import Home from './components/home';
 //import Post from './components/post';
-import Like from'./components/likes';
+import LikePage from'./components/likes';
 import CreatePost from './components/createpost';
 import Comments from "./components/comments/Comments";
 //import { Container } from '@mui/system';
@@ -27,7 +27,7 @@ function App () {
             <Routes>
     <Route exact path= "/Comments" element={<Comments />} /> 
     <Route exact path= "/createpost" element={<CreatePost />} /> 
-    <Route exact path= "/likes" element={<Like />} /> 
+    <Route exact path= "/likes" element={<LikePage />} /> 
     <Route exact path= "/upload" element={<Upload />} /> 
     <Route exact path= "/" element={<Navbar />} /> 
  <Route exact path= "/home" element={<Home />} /> 

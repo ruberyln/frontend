@@ -28,10 +28,8 @@ const CommentForm = ({
 </TextField>
 
       <Button className="comment-form-button" disabled={isTextareaDisabled}
-      alignItems= "right">
-        {submitLabel} 
-        
-      </Button>
+      onClick={submitLabel} > POST
+     </Button>
 
       {hasCancelButton && (
         <Button

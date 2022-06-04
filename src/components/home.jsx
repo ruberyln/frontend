@@ -44,7 +44,7 @@ return (
   <><MiniDrawer /><Box component="main" sx={{ flexGrow: 1, p: 3 }}>
 
     <Container component="main">
-      <Card sx={{ maxWidth: 900 }}
+      <Card sx={{ marginTop: 8, maxWidth: 900 }}
         alignItems="center"
         justifyContent="center">
         <CardHeader
@@ -73,14 +73,16 @@ return (
           <IconButton aria-label="share">
             <ThumbDownOutlinedIcon />
           </IconButton>
+          <Typography variant="h6">View Comments
           <ExpandMore
             expand={expanded}
             onClick={handleExpandClick}
             aria-expanded={expanded}
             aria-label="show more"
-          > <Typography variant="h6">View Comments</Typography>
+          > 
             <ExpandMoreIcon />
           </ExpandMore>
+          </Typography>
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
@@ -124,15 +126,19 @@ return (
           </IconButton>
           <IconButton aria-label="share">
             <ThumbDownOutlinedIcon />
+          
           </IconButton>
+          <Typography variant="h7" > View Comments
           <ExpandMore
             expand={expanded}
             onClick={handleExpandClick}
             aria-expanded={expanded}
             aria-label="show more"
-          > <Typography variant="h6">View Comments</Typography>
+          > 
+        
             <ExpandMoreIcon />
           </ExpandMore>
+          </Typography>
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
