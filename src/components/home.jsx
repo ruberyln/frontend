@@ -20,7 +20,7 @@ import TextField from '@mui/material/TextField'
 import { CardHeader, CardActions, CardContent } from '@mui/material';
 import CardMedia from '@mui/material/CardMedia';
 
-import MiniDrawer from './drawer';
+import Drawer from './drawer';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -41,7 +41,7 @@ export default function Home() {
   };
 return (
 
-  <><MiniDrawer /><Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+  <><Drawer /><Box component="main" sx={{ flexGrow: 1, p: 3 }}>
 
     <Container component="main">
       <Card sx={{ marginTop: 8, maxWidth: 900 }}

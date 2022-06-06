@@ -14,6 +14,9 @@ import Home from './components/home';
 import LikePage from'./components/likes';
 import CreatePost from './components/createpost';
 import Comments from "./components/comments/Comments";
+import Profile from './components/profile';
+import ImageAvatar from './components/avatar';
+import DrawerCopy from './components/drawercopy';
 //import { Container } from '@mui/system';
 //import Typography from '@mui/material/Typography';
 <meta name="viewport" content="initial-scale=1, width=device-width" />
@@ -25,6 +28,9 @@ function App () {
          
        
             <Routes>
+ <Route exact path= "/drawercopy" element={<DrawerCopy />} />      
+    <Route exact path= "/avatar" element={<ImageAvatar />} />        
+<Route exact path= "/profile" element={<Profile />} /> 
     <Route exact path= "/Comments" element={<Comments />} /> 
     <Route exact path= "/createpost" element={<CreatePost />} /> 
     <Route exact path= "/likes" element={<LikePage />} /> 
