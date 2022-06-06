@@ -14,8 +14,8 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 import Card from '@mui/material/Card';
 import Avatar from '@mui/material/Avatar';
 import { red } from '@mui/material/colors';
-import Button from '@mui/material/Button'
-import TextField from '@mui/material/TextField'
+//import Button from '@mui/material/Button'
+//import TextField from '@mui/material/TextField'
 
 import { CardHeader, CardActions, CardContent } from '@mui/material';
 import CardMedia from '@mui/material/CardMedia';
@@ -63,7 +63,7 @@ return (
           alt="Paella dish" />
         <CardContent>
           <Typography variant="body2" color="text.secondary">
-            You know how it is. Fashion = my life.
+         Working it out. 
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
@@ -117,7 +117,7 @@ return (
           alt="Paella dish" />
         <CardContent>
           <Typography variant="body2" color="text.secondary">
-            You know how it is. Fashion = my life.
+           caption
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
@@ -143,42 +143,9 @@ return (
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
 
-            <Typography paragraph>Comments</Typography>
-            <Typography paragraph>
-              @User1 Wow, looking beautiful
-              <br></br>
-              @User2 inspired !
-            </Typography>
-
-
+          <Comments/>
           </CardContent>
         </Collapse>
-
-
-
-        <Box
-          component="form"
-          sx={{
-            '& > :not(style)': { m: 1, width: '50ch' },
-          }}>
-          <TextField id="outlined-basic" label="comment" variant="outlined">
-            Comment
-          </TextField>
-        </Box>
-
-        <Box
-          m={1}
-          //margin
-          display="flex"
-          justifyContent="flex-end"
-          alignItems="flex-end"
-        >
-          <Button>
-            Post
-          </Button>
-
-
-        </Box>
 
       </Card>
 
@@ -211,24 +178,21 @@ return (
           <IconButton aria-label="share">
             <ThumbDownOutlinedIcon />
           </IconButton>
+          <Typography variant="h6"> View Comments
           <ExpandMore
             expand={expanded}
             onClick={handleExpandClick}
             aria-expanded={expanded}
             aria-label="show more"
-          > <Typography variant="h6">View Comments</Typography>
+          > 
+         
             <ExpandMoreIcon />
           </ExpandMore>
+          </Typography>
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
-
-            <Typography paragraph>Comments</Typography>
-            <Typography paragraph>
-              @User1 Wow, looking beautiful
-              <br></br>
-              @User2 inspired !
-            </Typography>
+<Comments/>
 
 
           </CardContent>
