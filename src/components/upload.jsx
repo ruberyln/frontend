@@ -243,7 +243,7 @@ export default function MiniDrawer() {
                   px: 2.5,
                 }}
                 component ={Link}
-                href = {"#"}
+                href = {"./profile"}
               >
                 <ListItemIcon
                   sx={{
